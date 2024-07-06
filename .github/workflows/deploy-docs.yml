@@ -64,11 +64,11 @@ jobs:
         run: cd src/docs && ${{ env.runtime }} install
 
       - name: Install daisyUI ${{env.daisyuiversion}} version if production
-        if: github.repository == 'saadeghi/daisyui'
+        if: github.repository == 'bdx0/daisyui'
         run: cd src/docs && ${{ env.runtime }} i daisyui@${{env.daisyuiversion}}
 
       - name: Install daisyUI newest tag if staging
-        if: github.repository == 'daisyui/daisyui.github.io'
+        if: github.repository == 'bdx0/daisyui'
         run: cd src/docs && ${{ env.runtime }} i daisyui@$([[ $(npm view daisyui version) > $(npm view daisyui dist-tags.alpha) ]] && echo "${{env.daisyuiversion}}" || echo "alpha")
 
       - name: Set daisyUI version in env file if staging
