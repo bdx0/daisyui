@@ -4,6 +4,7 @@ import { sveltekit } from "@sveltejs/kit/vite"
 import { visualizer } from "rollup-plugin-visualizer"
 
 export default defineConfig({
+  base: "/daisyui/",
   plugins: [
     sveltekit(),
     visualizer({
